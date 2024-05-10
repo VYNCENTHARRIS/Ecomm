@@ -1,0 +1,256 @@
+/* Reset and base styles */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #e1e9f2;
+    /* Light blue background for visual comfort */
+    color: #333;
+    font-size: 16px;
+}
+
+a {
+    color: inherit;
+    /* Ensures that links inherit text color from their parent elements */
+    text-decoration: none;
+    /* Removes underlines from links for a cleaner appearance */
+}
+
+/* Header styles */
+header {
+    background-color: #025e8a;
+    /* Deep blue background for a strong visual top bar */
+    color: white;
+    padding: 20px 10%;
+    /* Spacing inside the header */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Shadow for depth */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Establishes positioning context for child elements */
+}
+
+.logo {
+    max-width: 220px;
+    height: auto;
+}
+
+/* Cart icon and count */
+.cart-icon-container {
+    position: absolute;
+    /* Positioned relative to the nearest positioned ancestor (header) */
+    top: 20px;
+    /* Distance from top of the header */
+    right: 20px;
+    /* Distance from right of the header */
+}
+
+#cart-icon {
+    width: 40px;
+    /* Set the size of the cart icon */
+    vertical-align: middle;
+    /* Aligns the icon vertically with adjacent text or elements */
+}
+
+#cart-count {
+    background-color: #ff0000;
+    /* Red background for visibility */
+    color: white;
+    /* White text for contrast */
+    padding: 2px 6px;
+    /* Padding around the text */
+    border-radius: 50%;
+    /* Rounded corners for a circular shape */
+    font-size: 14px;
+    /* Text size */
+    position: absolute;
+    /* Positioned relative to its parent (cart-icon-container) */
+    top: 0;
+    /* Align top with parent */
+    right: 0;
+    /* Align right with parent */
+    transform: translate(50%, -50%);
+    /* Adjusts the positioning to center the badge over the icon */
+}
+
+nav {
+    background-color: #0096c7;
+    /* A lighter shade of blue for visual distinction from the header */
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    list-style-type: none;
+    /* Removes default list styling */
+    padding: 0;
+    text-align: center;
+    /* Centers the navigation links */
+}
+
+nav ul li {
+    display: inline;
+    /* Displays list items in a line */
+    margin: 0 20px;
+    /* Spacing between items */
+}
+
+nav ul li a {
+    color: white;
+    font-weight: bold;
+    /* Bold text for readability */
+}
+
+/* Main content area */
+main {
+    padding: 20px 10%;
+    background-color: #f0f4f8;
+    /* Very light blue for a softer contrast to white product cards */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Product Grid */
+.products-grid {
+    display: grid;
+    /* CSS grid layout */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    /* Automatically fill the space, responsive columns */
+    gap: 20px;
+    /* Spacing between grid items */
+    margin-top: 20px;
+    /* Space above the grid */
+}
+
+.product {
+    background-color: #ffffff;
+    /* White background for products */
+    border: 1px solid #cdeeff;
+    /* Soft blue border */
+    border-radius: 10px;
+    /* Rounded corners */
+    padding: 10px;
+    /* Padding inside product cards */
+    transition: all 0.3s ease;
+    /* Smooth transition for hover effects */
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    /* Moves product up slightly on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    /* Adds shadow for 3D effect */
+    border-color: #aaccee;
+    /* Lighter border on hover for highlight */
+}
+
+.product img {
+    width: 100%;
+    /* Full width of its container */
+    height: auto;
+    /* Maintain aspect ratio */
+}
+
+.product h3,
+.product p {
+    margin: 10px 0;
+    /* Vertical spacing */
+}
+
+.product p.price {
+    font-weight: bold;
+    /* Bold for emphasis */
+    color: #333;
+    /* Dark grey color for text */
+}
+
+.button {
+    background-color: #025e8a;
+    /* Matching header for consistency */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    /* Indicates clickable */
+    text-align: center;
+    /* Center text inside the button */
+}
+
+.button:hover {
+    background-color: #0077b6;
+    /* A lighter blue for hover effect */
+}
+
+footer {
+    background-color: #222;
+    /* Dark grey for contrast */
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    /* Adjust padding as needed */
+    display: flex;
+    flex-direction: auto;
+    /* Stack elements vertically */
+    align-items: center;
+    /* Center-align all items */
+    justify-content: center;
+    /* Center content vertically */
+    width: 100%;
+}
+
+.socialmed-icon {
+    width: 35px;
+    /* Adjust icon size as needed */
+    margin: 0 10px;
+    /* Space between icons */
+    display: inline-block;
+    /* Align icons in a row */
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* Two columns on tablet sizes */
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        /* Stack nav items vertically on mobile */
+        margin: 10px auto;
+        /* Center items horizontally */
+    }
+
+    nav ul {
+        text-align: center;
+        /* Center-align nav items for mobile */
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+        /* Single column layout on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+
+    header,
+    nav,
+    main,
+    footer {
+        padding: 15px;
+        /* Less padding for smaller screens */
+    }
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .socialmed-icon {
+        margin: 0 5px;
+        /* Smaller margin on smaller screens */
+    }
+}

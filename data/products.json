@@ -1,0 +1,98 @@
+[
+    {
+        "id": "1",
+        "category": "laptop",
+        "name": "MacBook Pro 14-inch - M2 Pro, 512GB SSD",
+        "price": "$1799",
+        "description": "Experience supercharged processing with M2 Pro chip. Ideal for professionals and creatives.",
+        "image": "images/macbook.png"
+    },
+    {
+        "id": "2",
+        "category": "laptop",
+        "name": "Apple Niner Bundle - M2, MacBook & Accessories",
+        "price": "$1999",
+        "description": "Complete powerhouse bundle with MacBook M2, enhanced Force Touch trackpad and more.",
+        "image": "images/bundle.png"
+    },
+    {
+        "id": "3",
+        "category": "tablet",
+        "name": "iPad 10.2 (9th Gen) 64GB - Space Gray",
+        "price": "$299",
+        "description": "Colorful, powerful, wonderful. Perfect for all your personal and professional needs.",
+        "image": "images/ipad9.webp"
+    },
+    {
+        "id": "4",
+        "category": "accessory",
+        "name": "Apple Watch Series 8 - 41mm GPS, Midnight Aluminum",
+        "price": "$399",
+        "description": "Monitor your health and stay connected with the future of wearable technology.",
+        "image": "images/watchblack.jpeg"
+    },
+    {
+        "id": "5",
+        "category": "accessory",
+        "name": "AirPods 3rd Gen with MagSafe Charging Case",
+        "price": "$179",
+        "description": "Immerse in magic sound with spatial audio technology and MagSafe charging.",
+        "image": "images/airpods.png"
+    },
+    {
+        "id": "6",
+        "category": "laptop",
+        "name": "MacBook Pro 16-inch - M3 Pro, 512GB SSD - Space Black",
+        "price": "$2299",
+        "description": "Push the limits with M3 Pro chip. Designed for those who defy limits and change the world.",
+        "image": "images/16mac.jpeg"
+    },
+    {
+        "id": "7",
+        "category": "laptop",
+        "name": "MacBook Air 13-inch - M1, 256GB - Gold",
+        "price": "$799",
+        "description": "Light as air yet powerful and flashy. The gold standard of portable computing.",
+        "image": "images/air13.png"
+    },
+    {
+        "id": "8",
+        "category": "phone",
+        "name": "iPhone 15 Plus - 6.7-inch Display",
+        "price": "$399",
+        "description": "Enjoy the latest technology and save big. Perfect balance of size and performance.",
+        "image": "images/iphone15plus.webp"
+    },
+    {
+        "id": "9",
+        "category": "accessory",
+        "name": "Apple TV 4K",
+        "price": "$179",
+        "description": "Transform your TV experience with 4K high dynamic range. Watch. Play. Enjoy.",
+        "image": "images/TV.jpeg"
+    },
+    {
+        "id": "10",
+        "category": "tablet",
+        "name": "iPad Pro 11-inch Wi-Fi 128GB - Space Gray",
+        "price": "$799",
+        "description": "Pro performance. In two sizes. Get more done with the most powerful iPad.",
+        "image": "images/11ipad.png"
+    },
+    {
+        "id": "11",
+        "category": "accessory",
+        "name": "Lightning to USB-C Cable (2m)",
+        "price": "$35",
+        "description": "Durable, fast, and versatile. Essential for charging and syncing.",
+        "image": "images/cable.png"
+    },
+    {
+        "id": "12",
+        "category": "accessory",
+        "name": "USB-C Digital AV Multiport Adapter",
+        "price": "$69",
+        "description": "Expand your productivity with connections for your USB-C devices.",
+        "image": "images/adapt.jpeg"
+    }
+]
