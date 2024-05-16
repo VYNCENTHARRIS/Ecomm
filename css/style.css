@@ -1,3 +1,4 @@
+/* Reset and base styles */
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +8,6 @@
 html,
 body {
     height: 100%;
-    /* Full height for the html and body to ensure footer can stick to the bottom */
     font-family: 'Helvetica Neue', Arial, sans-serif;
     background-color: #f0f4f8;
     color: #333;
@@ -18,10 +18,8 @@ body {
 
 body {
     min-height: 100vh;
-    /* Minimum height of the viewport */
     display: flex;
     flex-direction: column;
-    /* Makes the main content and footer stack vertically */
 }
 
 header {
@@ -31,36 +29,51 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+}
+
+.logo {
+    max-width: 225px;
 }
 
 nav {
-    background-color: #0096c7;
-    /* A lighter shade of blue for visual distinction from the header */
-    padding: 10px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
 }
 
-nav ul {
+.nav-menu {
     list-style-type: none;
-    /* Removes default list styling */
     padding: 0;
+    margin: 0;
+    display: flex;
     text-align: center;
-    /* Centers the navigation links */
 }
 
-nav ul li {
+.nav-menu li {
     display: inline;
-    /* Displays list items in a line */
     margin: 0 20px;
-    /* Spacing between items */
 }
 
-nav ul li a {
+.nav-menu li a {
     color: white;
     font-weight: bold;
-    /* Bold text for readability */
 }
 
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger img {
+    width: 40px;
+    height: auto;
+}
+
+/* Main content area */
+main {
+    padding: 20px 10%;
+    background-color: #f0f4f8;
+}
 
 .hero {
     padding: 50px 20px;
@@ -74,7 +87,6 @@ nav ul li a {
     from {
         opacity: 0;
         transform: translateX(-100%);
-        /* Text will move from the left to correct postion */
     }
 
     to {
@@ -86,7 +98,6 @@ nav ul li a {
 .hero h1,
 h2 {
     animation: glideInFromLeft 2.0s ease-out forwards;
-    /* Time it takes for animation to complete */
 }
 
 .carousel {
@@ -99,14 +110,12 @@ h2 {
     overflow-x: auto;
     scrollbar-width: thin;
     scrollbar-color: #666 #f0f4f8;
-    /* Style scrollbar for non-Apple devices */
 }
 
 .carousel-track {
     display: flex;
     transition: transform 0.5s ease-in-out;
     min-width: 1600px;
-    /* Ensure enough width to hold all items without wrapping */
 }
 
 .product {
@@ -114,20 +123,14 @@ h2 {
     width: 25%;
     cursor: pointer;
     margin: 5px;
-    /* Provide some spacing around items */
     transition: transform 0.3s ease;
-    /* Smooth transition for hover effects */
     position: relative;
-    /* Required for vertical rise effect */
 }
 
 .product:hover {
     transform: translateY(-10px);
-    /* Vertical rise */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    /* Optional depth shadow */
 }
-
 
 .carousel-control {
     position: absolute;
@@ -139,10 +142,6 @@ h2 {
     cursor: pointer;
     padding: 10px;
     z-index: 10;
-}
-
-.logo {
-    max-width: 225px;
 }
 
 .prev {
@@ -160,33 +159,85 @@ footer {
     color: white;
     width: 100%;
     margin-top: auto;
-    /* Auto margin for top to push the footer to the bottom */
 }
 
-@media (max-width: 768px) {
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
     .carousel-track-container {
         overflow-x: hidden;
-        /* Disable horizontal scroll */
     }
 
     .carousel-track {
         flex-direction: column;
-        /* Stack items vertically */
         min-width: 100%;
-        /* Reset min-width to allow for vertical stacking */
         align-items: center;
-        /* Center items for better presentation */
     }
 
     .product {
         width: 90%;
-        /* Adjust width to better fit mobile screens */
         margin: 10px auto;
-        /* Increase margin and center products */
     }
 
     .carousel-control {
         display: none;
-        /* Hide carousel controls on mobile */
     }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #0096c7;
+    }
+
+    .nav-menu li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .carousel-track-container {
+        overflow-x: hidden;
+    }
+
+    .carousel-track {
+        flex-direction: column;
+        min-width: 100%;
+        align-items: center;
+    }
+
+    .product {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .carousel-control {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+
+    header,
+    nav,
+    main,
+    footer {
+        padding: 10px;
+    }
+
+    .hamburger img {
+        width: 30px;
+    }
+}
+
+/* Active state for the menu */
+#nav-menu.active {
+    display: flex;
 }

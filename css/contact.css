@@ -1,60 +1,65 @@
-body,
-html {
+/* Reset and base styles */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
     font-family: 'Helvetica Neue', Arial, sans-serif;
     background-color: #f0f4f8;
     color: #333;
     font-size: 16px;
-    height: 100%;
-    /* Ensure full height */
 }
 
 header {
     background-color: #025e8a;
-    /* Deep blue background for a strong visual top bar */
     color: white;
     padding: 20px 10%;
-    /* Spacing inside the header */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    /* Shadow for depth */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* Establishes positioning context for child elements */
+    position: relative;
 }
 
 .logo {
     max-width: 220px;
-
 }
 
 nav {
-    background-color: #0096c7;
-    /* A lighter shade of blue for visual distinction from the header */
-    padding: 10px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
 }
 
-nav ul {
+.nav-menu {
     list-style-type: none;
-    /* Removes default list styling */
     padding: 0;
+    margin: 0;
+    display: flex;
     text-align: center;
-    /* Centers the navigation links */
 }
 
-nav ul li {
+.nav-menu li {
     display: inline;
-    /* Displays list items in a line */
     margin: 0 20px;
-    /* Spacing between items */
 }
 
-nav ul li a {
+.nav-menu li a {
     color: white;
     font-weight: bold;
-    /* Bold text for readability */
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger img {
+    width: 40px;
+    height: auto;
 }
 
 main {
@@ -63,22 +68,18 @@ main {
     justify-content: center;
     align-items: center;
     min-height: calc(100vh - 60px);
-    /* Subtract the height of header/footer */
     padding: 20px;
 }
 
 .contact-container {
     width: 80%;
-    /* Responsive width */
     max-width: 800px;
-    /* Maximum width */
     padding: 40px;
     background: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    /* Stack elements vertically */
 }
 
 .contact-info,
@@ -116,7 +117,6 @@ button {
     font-size: 16px;
     transition: background-color 0.3s;
     width: auto;
-    /* Responsive button size */
 }
 
 button:hover {
@@ -131,10 +131,29 @@ footer {
     width: 100%;
 }
 
+/* Responsive Media Queries */
 @media (max-width: 768px) {
     .contact-container {
         width: 90%;
-        /* Increase width on smaller tablets */
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #0096c7;
+    }
+
+    .nav-menu li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: block;
     }
 }
 
@@ -148,12 +167,19 @@ footer {
 
     .contact-container {
         width: 100%;
-        /* Full width on mobile devices */
         padding: 20px;
     }
 
     button {
         width: 100%;
-        /* Full width button for easier mobile access */
     }
+
+    .hamburger img {
+        width: 30px;
+    }
+}
+
+/* Active state for the menu */
+#nav-menu.active {
+    display: flex;
 }

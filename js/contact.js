@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    // Toggle the active class on the navigation menu when the hamburger is clicked
+    hamburger.addEventListener('click', function () {
+        navMenu.classList.toggle('active');
+    });
+
     const form = document.getElementById('contactForm');
 
     // Add event listener for form submission
@@ -21,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!hasError) {
             // If no errors were found, you can proceed to process the form
             alert('Thank you for your submission! We will get back to you soon.');
-            form.reset(); // Optionally reset the form after submission
+            form.reset(); // Reset the form after submission
         }
     });
 });

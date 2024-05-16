@@ -1,11 +1,18 @@
-// Listen for the 'DOMContentLoaded' event which fires when the HTML initially loads.
 document.addEventListener('DOMContentLoaded', function () {
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    // Toggle the active class on the navigation menu when the hamburger is clicked
+    hamburger.addEventListener('click', function () {
+        navMenu.classList.toggle('active');
+    });
+
     // Select the carousel's track where all product images will be displayed.
     const track = document.querySelector('.carousel-track');
 
     // Fetch product data from a local JSON file.
     fetch('data/products.json')
-        .then(response => response.json())
+        .then(response => response.json()) // Parse the JSON response.
         .then(products => {
             // Iterate over the first seven products from the JSON data.
             products.slice(0, 7).forEach(product => {
@@ -25,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
     // Define a function to move the carousel left or right.
-    window.moveSlide = function (direction) {
+    function moveSlide(direction) {
         let scrollAmount = 0; // Initialize scroll amount to track how much the carousel has scrolled.
         // Set an interval to perform the scroll movement.
         const slideTimer = setInterval(() => {
@@ -34,8 +41,12 @@ document.addEventListener('DOMContentLoaded', function () {
             scrollAmount += 10; // Keep track of the total scrolled distance.
             // Stop scrolling once we've scrolled 100 pixels.
             if (scrollAmount >= 100) { // This limits the scroll action to 100 pixels per arrow click.
-                window.clearInterval(slideTimer); // Clear the interval to stop further scrolling.
+                clearInterval(slideTimer); // Clear the interval to stop further scrolling.
             }
         }, 25); // Run this interval every 25 milliseconds. Adjust this value for different speeds.
-    };
+    }
+
+    // Attach event listeners to arrow elements for carousel navigation.
+    document.querySelector('.prev').addEventListener('click', () => moveSlide(-1)); // Move left
+    document.querySelector('.next').addEventListener('click', () => moveSlide(1)); // Move right
 });
